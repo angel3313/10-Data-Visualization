@@ -1,4 +1,4 @@
-# Task-1
+# Mandatory Task
 
 In this task we are going to represent the number of cases of coronavirus by autonomous community in Spain. The size of the circle increases as there are more cases of coronavirus.
 
@@ -9,13 +9,13 @@ In this task we are going to represent the number of cases of coronavirus by aut
 # Last Covid Representation
 ![image](https://user-images.githubusercontent.com/94138220/180602577-836433f4-fc65-4ed2-bc66-6df22c01d35b.png)
 
-# Steps
+# Instructions
 
 ```bash
 npm install
 ```
 
-- We are going to install the necessary packages to work with TopoJSON:
+- First of all we have to install the necessary packages to work with TopoJSON:
 
 ```bash
 npm install topojson-client --save
@@ -37,7 +37,7 @@ npm install @types/topojson --save-dev
 npm install d3-composite-projections --save
 ```
 
-- We import all the data with which we are going to work: TopoJSON, the file of Spain, the file of the autonomous communities, the projections of the Canary Islands and the covid data with which we will work.
+- As follows we the data with which we are going to work: TopoJSON, the file of Spain, the file of the autonomous communities, the projections of the Canary Islands and the covid data with which we will work.
 
 - In: _./src/index.ts_
 
@@ -62,7 +62,7 @@ const calculateRadiusBasedOnAffectedCases = (comunidad: string,data: ResultEntry
 };
 ```
 
--We continue with the settings and configurations for the representation of the map of Spain and its Covid cases:
+-Settings and configurations for the representation of the map of Spain and its Covid cases:
 
 ```typescript
 const svg = d3
@@ -99,7 +99,7 @@ svg
   .attr("cy", d => aProjection([d.long, d.lat])[1]);
   ```
 
-- The following function updates the map from initial cases to final cases:
+- This function updates the map from initial cases to final cases:
 
 ```typescript
 const updateCircles = (data: ResultEntry[]) => {
@@ -113,7 +113,7 @@ const updateCircles = (data: ResultEntry[]) => {
   };
 ```
 
-- We create the buttons to move from one map to the other:
+- And create the buttons to move from one map to the other:
 
 ```typescript
 document
